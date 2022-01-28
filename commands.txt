@@ -1,0 +1,18 @@
+dotnet new webapi
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Flunt --version 2.0.5
+dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version 6.0.1
+dotnet add package Dapper --version 2.0.123
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version 6.0.1
+dotnet add package Serilog.AspNetCore
+dotnet add package Serilog.Sinks.MSSqlserver
+
+dotnet ef migrations add addCategoryAndProduct
+
+
+-----comando util para remover o banco de dados----
+USE master;
+ALTER DATABASE IWantDb SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+DROP DATABASE IWantDb;
